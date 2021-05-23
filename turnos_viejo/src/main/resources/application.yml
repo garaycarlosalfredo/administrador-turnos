@@ -1,0 +1,15 @@
+jwt:
+  expiration: 43200
+  secret: secret
+spring:
+  datasource:
+    password: ''
+    url: jdbc:mysql://localhost:3306/administrar-turnos?useSLL=false&serverTimezone=UTC&useLegacyDateTimeCode=false
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: 'true'
