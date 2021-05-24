@@ -1,12 +1,12 @@
-package com.administrador.turnos.service;
+package com.administrador.usuarios.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.administrador.turnos.entity.Usuario;
-import com.administrador.turnos.repository.UsuarioRepository;
+import com.administrador.usuarios.entity.Usuario;
+import com.administrador.usuarios.repository.UsuarioRepository;
 
 
 @Service

@@ -1,12 +1,12 @@
-package com.administrador.turnos.service;
+package com.administrador.usuarios.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.administrador.turnos.entity.Rol;
-import com.administrador.turnos.repository.RolRepository;
+import com.administrador.usuarios.entity.Rol;
+import com.administrador.usuarios.repository.RolRepository;
 
 @Service
 public class RolService {

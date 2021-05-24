@@ -1,4 +1,4 @@
-package com.administrador.turnos.controller;
+package com.administrador.usuarios.controller;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.administrador.turnos.entity.Rol;
-import com.administrador.turnos.service.RolService;
+import com.administrador.usuarios.entity.Rol;
+import com.administrador.usuarios.service.RolService;
 
 @RestController
 

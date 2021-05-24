@@ -1,11 +1,11 @@
-package com.administrador.turnos.repository;
+package com.administrador.usuarios.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.administrador.turnos.entity.Rol;
+import com.administrador.usuarios.entity.Rol;
 
 @Repository
 public interface RolRepository extends CrudRepository<Rol, Integer>{

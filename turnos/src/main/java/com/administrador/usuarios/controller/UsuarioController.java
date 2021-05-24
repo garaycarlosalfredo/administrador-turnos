@@ -1,4 +1,4 @@
-package com.administrador.turnos.controller;
+package com.administrador.usuarios.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.administrador.turnos.entity.Usuario;
-import com.administrador.turnos.service.UsuarioService;
+import com.administrador.usuarios.entity.Usuario;
+import com.administrador.usuarios.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")

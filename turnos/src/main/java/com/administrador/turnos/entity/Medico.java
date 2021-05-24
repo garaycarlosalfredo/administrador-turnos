@@ -6,7 +6,9 @@
 package com.administrador.turnos.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -21,14 +24,15 @@ import javax.persistence.Table;
  * @author Carlos
  */
 @Entity
-@Table(name = "personas")
+@Table(name = "medico")
 @NamedQueries({
-    @NamedQuery(name = "Personas.findAll", query = "SELECT p FROM Personas p"),
-    @NamedQuery(name = "Personas.findById", query = "SELECT p FROM Personas p WHERE p.id = :id"),
-    @NamedQuery(name = "Personas.findByDni", query = "SELECT p FROM Personas p WHERE p.dni = :dni"),
-    @NamedQuery(name = "Personas.findByNombre", query = "SELECT p FROM Personas p WHERE p.nombre = :nombre"),
-    @NamedQuery(name = "Personas.findByApellido", query = "SELECT p FROM Personas p WHERE p.apellido = :apellido")})
-public class Personas implements Serializable {
+    @NamedQuery(name = "Medico.findAll", query = "SELECT m FROM Medico m"),
+    @NamedQuery(name = "Medico.findById", query = "SELECT m FROM Medico m WHERE m.id = :id"),
+    @NamedQuery(name = "Medico.findByDni", query = "SELECT m FROM Medico m WHERE m.dni = :dni"),
+    @NamedQuery(name = "Medico.findByNombre", query = "SELECT m FROM Medico m WHERE m.nombre = :nombre"),
+    @NamedQuery(name = "Medico.findByApellido", query = "SELECT m FROM Medico m WHERE m.apellido = :apellido"),
+    @NamedQuery(name = "Medico.findByEspecialidad", query = "SELECT m FROM Medico m WHERE m.especialidad = :especialidad")})
+public class Medico implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -45,19 +49,25 @@ public class Personas implements Serializable {
     @Basic(optional = false)
     @Column(name = "apellido")
     private String apellido;
+    @Basic(optional = false)
+    @Column(name = "especialidad")
+    private String especialidad;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "idMedico")
+    private List<Turno> turnoList;*/
 
-    public Personas() {
+    public Medico() {
     }
 
-    public Personas(Integer id) {
+    public Medico(Integer id) {
         this.id = id;
     }
 
-    public Personas(Integer id, int dni, String nombre, String apellido) {
+    public Medico(Integer id, int dni, String nombre, String apellido, String especialidad) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.especialidad = especialidad;
     }
 
     public Integer getId() {
@@ -92,6 +102,22 @@ public class Personas implements Serializable {
         this.apellido = apellido;
     }
 
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+/*
+    public List<Turno> getTurnoList() {
+        return turnoList;
+    }
+
+    public void setTurnoList(List<Turno> turnoList) {
+        this.turnoList = turnoList;
+    }*/
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -102,10 +128,10 @@ public class Personas implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Personas)) {
+        if (!(object instanceof Medico)) {
             return false;
         }
-        Personas other = (Personas) object;
+        Medico other = (Medico) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -114,7 +140,7 @@ public class Personas implements Serializable {
 
     @Override
     public String toString() {
-        return "a.Personas[ id=" + id + " ]";
+        return "com.administrador.turnos.entity.Medico[ id=" + id + " ]";
     }
     
 }
