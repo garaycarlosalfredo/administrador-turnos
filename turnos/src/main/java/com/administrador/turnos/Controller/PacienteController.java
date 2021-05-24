@@ -51,7 +51,7 @@ public class PacienteController {
 	}
 	
 	@GetMapping("/apellido/query")
-	public List<Paciente> obtenerPacientePorDni(@RequestParam("apellido") String apellido) {
+	public List<Paciente> obtenerPacientePorApellido(@RequestParam("apellido") String apellido) {
 		return pacienteService.obtenerPacientePorApellido(apellido);
 	}
 }

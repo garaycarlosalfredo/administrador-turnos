@@ -52,6 +52,9 @@ public class Paciente implements Serializable {
     @Basic(optional = false)
     @Column(name = "prepaga")
     private String prepaga;
+    @Column(name = "reacciones")
+    private String reacciones;
+    
     /*
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPaciente")
     private List<Turno> turnoList;*/
@@ -110,6 +113,17 @@ public class Paciente implements Serializable {
     public void setPrepaga(String prepaga) {
         this.prepaga = prepaga;
     }
+    
+
+    public String getReacciones() {
+		return reacciones;
+	}
+
+	public void setReacciones(String reacciones) {
+		this.reacciones = reacciones;
+	}    
+    
+    
 /*
     public List<Turno> getTurnoList() {
         return turnoList;
@@ -119,7 +133,8 @@ public class Paciente implements Serializable {
         this.turnoList = turnoList;
     }*/
 
-    @Override
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (id != null ? id.hashCode() : 0);
